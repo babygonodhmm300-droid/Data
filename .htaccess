@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redirect จาก root ไปยัง data.php
+RewriteRule ^$ /data.php [L]
+
+# Security settings
+Options -Indexes
+
+# Block access to sensitive files
+<Files ~ "\.(env|json|config|log|ini|sql)$">
+    Deny from all
+</Files>
